@@ -196,7 +196,7 @@ function App() {
 
   // stake will trigger a stake on the users behalf
   function unstake() {
-    //console.log(accountStakes);
+    console.log(accountStakes);
     // When we trigger Transactions we should use send instead of call
     // We should also calculate the GAS cost so we can apply the correct amount of gas
     devToken.methods.withdrawStake(data,0 ).estimateGas({from: accounts[0]})
