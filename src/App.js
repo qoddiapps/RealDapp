@@ -67,10 +67,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p> Welcome to your the alchemys's lair</p>
+        <p> Welcome to the lair</p>
         <p>The total supply is {totalSupply/10**18}</p>
-        <p>Account balance: {accountBalance/10**18} bitch</p>
-        <p>Staked balance: {accountStakes.total_amount/10**18} bitch</p>
+        <p>Account balance: {accountBalance/10**18} </p>
+        <p>Staked balance: {accountStakes.total_amount/10**18} </p>
         <input type ="number" onChange ={getData}/>
         
         <button onClick={stake}><p>Stake</p></button>
@@ -115,7 +115,7 @@ function App() {
     // getContractAddress returns the address of the contract
   // hardcoded :) 
   function getContractAddress() {
-    return "0x5e32A235c74175923d8C78f2825E6a103B2591b7";
+    return "0x8f85ab49731adFDb4DeB29f716b38d318d95155E";
   }
 
   async function connectToSelectedNetwork() {
@@ -143,9 +143,11 @@ function App() {
         throw new Error(error);
       })
   }
-
+  
+/*
    // getUserProfile will fetch account information from the block chain network
    async function getUserProfile() {
+     //console.log(accounts[0])
     // Let's grab the tokens total supply, the method is named the same as in the Solidity code, and add call() to execute it. 
     // We can also get the response using a callback. I do recommend this method most times as we dont know how long the executions can take.
     call(devToken.methods.totalSupply, setTotalSupply);
@@ -154,6 +156,7 @@ function App() {
     call(devToken.methods.hasStake, setAccountStakes, accounts[0]);
     //call(devtoken.methods.totalStakeAmount,setAmountStaked,accounts[0]);
   }
+*/
 
   // call takes in a function to execute and runs a given callback on the response
   function call(func, callback, ...args) {
@@ -170,7 +173,7 @@ function App() {
 
   // stake will trigger a stake on the users behalf
   function stake() {
-    console.log(accountStakes);
+    console.log(devToken);
     // When we trigger Transactions we should use send instead of call
     // We should also calculate the GAS cost so we can apply the correct amount of gas
     devToken.methods.stake(data).estimateGas({from: accounts[0]})
