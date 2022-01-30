@@ -39,7 +39,7 @@ function App() {
       // Only get profile if we are completly loaded 
       if (loaded && (accounts !== 0)) {
         // get user info
-        console.log(accounts);
+        //console.log(accounts);
         getUserProfile()
       } else {
       // dirty trick to trigger reload if something went wrong
