@@ -71,6 +71,7 @@ function App() {
         <p>The total supply is {totalSupply/10**18}</p>
         <p>Account balance: {accountBalance/10**18} </p>
         <p>Staked balance: {accountStakes.total_amount/10**18} </p>
+        
         <input type ="number" onChange ={getData}/>
         
         <button onClick={stake}><p>Stake</p></button>
@@ -130,7 +131,7 @@ function App() {
     // Set the state of the app by passing the contract so we can reach it from other places
     setDevToken(devtoken);
   }
-
+/*
    // getUserProfile will fetch account information from the block chain network
    function getUserProfile() {
     // Let's grab the token total supply, the method is named the same as in the Solidity code, and add call() to execute it. 
@@ -142,9 +143,9 @@ function App() {
       .catch((error) => {
         throw new Error(error);
       })
-  }
+  }*/
   
-/*
+
    // getUserProfile will fetch account information from the block chain network
    async function getUserProfile() {
      //console.log(accounts[0])
@@ -156,7 +157,7 @@ function App() {
     call(devToken.methods.hasStake, setAccountStakes, accounts[0]);
     //call(devtoken.methods.totalStakeAmount,setAmountStaked,accounts[0]);
   }
-*/
+
 
   // call takes in a function to execute and runs a given callback on the response
   function call(func, callback, ...args) {
