@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 // These imports are important
 import React, { useState, useEffect, useRef } from 'react';
-import Web3 from 'web3-eth'
+import Web3 from 'web3-eth';
 
 
 function App() {
