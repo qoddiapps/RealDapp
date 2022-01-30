@@ -43,6 +43,7 @@ function App() {
         getUserProfile()
       } else {
       // dirty trick to trigger reload if something went wrong
+      getUserProfile()
         setTimeout(setLoaded(true), 500);
       }
       // This here subscribes to changes on the loaded and accounts state
